@@ -1,5 +1,9 @@
 {
     "require-dev": {
         "laravel/homestead": "^6.2"
+    },
+    "require": {
+        "barryvdh/laravel-cors": "^0.9.3",
+        "facebook/graph-sdk": "^5.6"
     }
 }

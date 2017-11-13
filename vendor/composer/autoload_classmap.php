@@ -6,4 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'CorsKernel' => $vendorDir . '/barryvdh/laravel-cors/tests/CorsKernel.php',
+    'CorsServiceTest' => $vendorDir . '/barryvdh/laravel-cors/tests/CorsServiceTest.php',
+    'GlobalMiddlewareTest' => $vendorDir . '/barryvdh/laravel-cors/tests/GlobalMiddlewareTest.php',
+    'GroupMiddlewareTest' => $vendorDir . '/barryvdh/laravel-cors/tests/GroupMiddlewareTest.php',
+    'MockApp' => $vendorDir . '/barryvdh/laravel-cors/tests/CorsServiceTest.php',
+    'OriginMatcherTest' => $vendorDir . '/barryvdh/laravel-cors/tests/OriginMatcherTest.php',
+    'PreflightTest' => $vendorDir . '/barryvdh/laravel-cors/tests/PreflightTest.php',
+    'TestCase' => $vendorDir . '/barryvdh/laravel-cors/tests/TestCase.php',
 );

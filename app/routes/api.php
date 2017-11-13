@@ -13,6 +13,44 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/* Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+}); */
+
+
+
+Route::group(['prefix' => 'v1'], function(){
+
+
+
+    // Posts Routes
+    Route::get('post','PostController@index');
+    Route::get('post/{id}','PostController@show');
+    Route::post('post','PostController@store');
+    Route::patch('post/{id}','PostController@update');
+    Route::delete('post/{id}','PostController@delete');
+
+    // Auth Routes
+    Route::group([
+        'middleware' => 'api',
+        'prefix' => 'auth'
+    
+    ], function ($router) {
+    
+        Route::post('login', 'AuthController@login');
+        Route::get('login', function(){
+            return "hello";
+        });
+    
+    });
+
+    // Category Routes
+    Route::get('category','CategoryController@index');
+    Route::get('category/{id}','CategoryController@show');
+    Route::post('category','CategoryController@store');
+    Route::patch('category/{id}','CategoryController@update');
+    Route::delete('category/{id}','CategoryController@delete');
+
+
+    Route::post('facebook','FacebookController@post');
 });
